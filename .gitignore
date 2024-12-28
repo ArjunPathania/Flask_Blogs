@@ -1,0 +1,55 @@
+# Python bytecode files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+env/
+*.env
+
+# Flask and instance-specific files
+instance/
+*.sqlite3
+*.db
+
+# Static and media files (optional, if they are generated dynamically)
+static/assets/*
+!static/assets/keep/
+
+# Logs
+*.log
+*.log.*
+*.out
+*.err
+
+# IDE and Editor settings
+.vscode/
+.idea/
+*.swp
+*.swo
+*.swn
+*.swx
+*.bak
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency files
+*.egg-info/
+pip-log.txt
+
+# Build and distribution directories
+build/
+dist/
+
+# Coverage and test files
+.coverage
+.pytest_cache/
+nosetests.xml
+coverage.xml
+
+# Other
+*.~undo-tree~
+
