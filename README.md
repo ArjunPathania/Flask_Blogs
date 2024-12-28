@@ -79,7 +79,6 @@ blog-project/
 ├── forms.py             # WTForms classes
 ├── main.py            # Backend Server 
 │
-
 ├── .gitignore               # Git ignore file
 ├── README.md                # Project documentation
 ├── requirements.txt         # Python dependencies
