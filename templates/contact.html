@@ -1,0 +1,87 @@
+{% include "header.html" %}
+
+<!-- Page Header-->
+<header
+  class="masthead"
+  style="background-image: url('../static/assets/img/contact-bg.jpg')"
+>
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="page-heading">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+              <div class="alert alert-{{ category }}" role="alert">
+                {{ message }}
+              </div>
+              {% endfor %}
+            {% endif %}
+            {% endwith %}
+          <h1>Contact Me</h1>
+          <span class="subheading">Have questions? I have answers.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Main Content-->
+<main class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <p>
+          Want to get in touch? Fill out the form below to send me a message and
+          I will get back to you as soon as possible!
+        </p>
+        <div class="my-5">
+          <!-- Contact Form -->
+          <form method="POST" action="{{ url_for('contact') }}">
+            {{ form.hidden_tag() }}
+
+            <div class="form-floating mb-3">
+              {{ form.name(class="form-control", placeholder="Enter your name...") }}
+              {{ form.name.label(class_="form-label") }}
+              {% for error in form.name.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="form-floating mb-3">
+              {{ form.email(class="form-control", placeholder="Enter your email...") }}
+              {{ form.email.label(class_="form-label") }}
+              {% for error in form.email.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="form-floating mb-3">
+              {{ form.phone(class="form-control", placeholder="Enter your phone number...") }}
+              {{ form.phone.label(class_="form-label") }}
+              {% for error in form.phone.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <div class="form-floating mb-3">
+              {{ form.message(class="form-control", placeholder="Enter your message here...", style="height: 12rem;") }}
+              {{ form.message.label(class_="form-label") }}
+              {% for error in form.message.errors %}
+                <div class="text-danger">{{ error }}</div>
+              {% endfor %}
+            </div>
+
+            <button
+              class="btn btn-primary text-uppercase"
+              type="submit"
+            >
+              Send
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+{% include "footer.html" %}
